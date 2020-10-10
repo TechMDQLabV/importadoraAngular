@@ -1,0 +1,67 @@
+<div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
+  <div class="container">
+      <div class="row mt-4 pt-4 pb-4 div_trans5 corner4">
+        <div class="col-lg-12 col-md-6 col-sm-12 ml-auto mr-auto text-white">        
+        <p>Nueva Categoria</p>
+        <form>
+          <div class="form-group">
+            <label for="nameInput">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nameInput"
+              name="nameInput"
+              [(ngModel)]="nameInput"
+            />
+          </div>
+          <div *ngIf="buttonSave; else buttonUpdate">
+            <button type="submit" class="btn btn-primary" (click)="onAddcategory()">Guardar</button>
+          </div>
+          <ng-template #buttonUpdate>
+            <div>
+              <button type="submit" class="btn btn-success" (click)="update()">
+                Actualizar
+              </button>
+              <button type="submit" class="btn btn-danger" (click)="onButtonAdd()">
+                Cancelar
+              </button>
+            </div>
+          </ng-template>
+        </form>
+      </div>
+    </div>      
+
+      <div class="row mt-4 pt-4 pb-4 div_trans5 corner4 justify-content-center">
+        <p class="text-white mb-4">Listado de Categorias</p>        
+        <table class="table text-white m-2">
+          <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th class="text-center">Estado</th>
+            <th class="text-center">Eliminar</th>
+            <th class="text-center">Actualizar</th>
+            <th class="text-center">Etiquetas</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categorias">
+              <td>{{ category.id }}</td>
+              <td>{{ category.name }}</td>
+              <td class="text-center" *ngIf="category.isActive != 0; else desactivado">
+                <a (click)="onChangeStatus(category.id)"><i class="fa fa-eye"></i></a>
+              </td>
+              <ng-template #desactivado>
+                <td class="text-center">
+                  <a (click)="onChangeStatus(category.id)">
+                    <i class="fa fa-eye-slash"></i>
+                  </a>
+                </td>
+              </ng-template>
+              <td class="text-center"><button class="btn btn-danger mr-2"><i class="fa fa-trash-o"></i> Eliminar</button></td>
+              <td class="text-center"><button class="btn btn-success" (click)="onUpdate(category)"><i class="fa fa-pencil-square-o"></i> Actualizar</button></td>
+              <td class="text-center"><button class="btn btn-info" (click)="onViewtags(category)"><i class="fa fa-list"></i> Ver Etiquetas</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>          

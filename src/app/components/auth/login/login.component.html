@@ -1,0 +1,48 @@
+    <div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+                    <div class="card card-register bg-info">
+                        <h3 class="title">Welcome</h3>
+
+                        <form [formGroup]="LoginForm" class="register-form">               
+                            <label>Email</label>
+                            <div class="input-group form-group-no-border" autofocus>
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="nc-icon nc-email-85"></i>
+                                </span>
+                              </div>
+
+                                <input type="text" class="form-control" placeholder="Email" formControlName="email" (focus)="focus=true" (blur)="focus=false" >
+                            </div>
+
+                            <label>Password</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="nc-icon nc-key-25"></i>
+                                </span>
+                              </div>
+                                <input type="password" class="form-control" placeholder="Password" formControlName="password" (focus)="focus1=true" (blur)="focus1=false" >
+                            </div>
+
+                            <div class="row align-items-center remember mt-3 ml-1">
+                                <input type="checkbox"><span class="ml-2">Remember Me</span>
+                            </div>
+                            <input type="submit" value="Log In" class="btn btn-neutral btn-block btn-round" (click)="login()">
+                        </form>
+
+                        <div class="forgot mt-4">
+                            <a href="#" class="text-dark">Forgot your password?</a>                           
+                        </div>
+
+                        <div class="signup text-center mt-2">
+                            <a href="/register" class="text-danger">Don't have an account? <span class="text-dark"> Sign Up</span></a> 
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
