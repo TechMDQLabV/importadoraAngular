@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
-    <div class="container">
-        <div class="navbar-translate">
-           <!-- <a class="navbar-brand" href="https://wicomex.com">wicomex.com</a>-->
-            <a [routerLink]="['/home']" class="navbar-brand">wicomex.com</a>            
+    <div class="container">  
+        <div class="navbar-translate">              
+            <!-- <a class="navbar-brand" href="https://wicomex.com">wicomex.com</a>-->
+            <a [routerLink]="['/home']" class="navbar-brand"><img src="assets/img/wincomex-logo.png" width="125" alt="wincomex"></a>                          
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
                 <span class="navbar-toggler-bar"></span>
                 <span class="navbar-toggler-bar"></span>
@@ -10,8 +10,13 @@
             </button>
         </div>
         <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto" *ngIf="isHome()">
+                <form class="form-group form-inline">
+                    <input type="text" class="form-control ml-1" id="navSearch" placeholder="Search....">
+                    <button type="button" class="btn btn-outline-dark ml-2">Search</button>                    
+                </form>    
+            </ul>              
             <ul *ngIf="loggedIn$ | async as loggedIn; else notLogged" class="navbar-nav ml-auto"> 
-
                 <li class="nav-item">
                     <a href="https://www.creative-tim.com/product/paper-kit-2-pro-angular?ref=pk2-angular-free-local" target="_blank" class="btn btn-danger btn-round">Upgrade to Pro</a>
                 </li>
@@ -40,8 +45,8 @@
                 </li>
             </ul>         
 
-            <ng-template #notLogged> 
-            <ul class="navbar-nav ml-auto">
+            <ng-template #notLogged>             
+            <ul class="navbar-nav ml-auto">               
                 <li class="nav-item" *ngIf="!isDocumentation()">
                     <a [routerLink]="['/register']" class="nav-link">Register</a>
                 </li>                

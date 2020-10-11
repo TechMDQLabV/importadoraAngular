@@ -1,5 +1,5 @@
 <div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
-  <div class="container">
+  <div class="container mt-5">
       <div class="row mt-4 pt-4 pb-4 div_trans5 corner4">
         <div class="col-lg-12 col-md-6 col-sm-12 ml-auto mr-auto text-white"> 
         <h3>Etiquestas de la categoria: {{nameCategory}}</h3>      
@@ -29,7 +29,7 @@
     </div> 
 
       <div class="row mt-4 pt-4 pb-4 div_trans5 corner4 justify-content-center">
-        <p class="text-white mb-4">Listado de Etiquetas</p>        
+        <h6 class="text-white mb-4">Listado de Etiquetas</h6>        
         <table class="table text-white m-2">
           <thead>
             <th>Id</th>
@@ -43,13 +43,11 @@
               <td>{{ tag.id }}</td>
               <td>{{ tag.name }}</td>
               <td class="text-center" *ngIf="tag.isActive != 0; else desactivado">
-                  <a (click)="onChangeStatus(tag.category_id, tag.id)"><i class="fa fa-eye"></i></a>
+                  <a class="cursor-link" (click)="onChangeStatus(tag.category_id, tag.id)"><i class="fa fa-eye text-white"></i></a>
               </td>
               <ng-template #desactivado>
                 <td class="text-center">
-                  <button (click)="onChangeStatus(tag.category_id, tag.id)">
-                    <i class="fas fa-eye-slash"></i>
-                  </button>
+                  <a class="cursor-link" (click)="onChangeStatus(tag.category_id, tag.id)"><i class="fas fa-eye-slash text-white"></i></a>
                 </td>
               </ng-template>
               <td class="text-center"><button class="btn btn-danger btn-sm mr-2" (click)="onDelete(tag.category_id, tag.id)"><i class="fa fa-trash-o"></i> Eliminar</button></td>

@@ -5,3 +5,4 @@
 .div_trans9 { background-color: rgba(0, 0, 0, 0.9); }
 .corner4 { border-radius: 15px; }
 .corner5 { border-radius: 20px; }
+.cursor-link { cursor:pointer; text-decoration:none; }

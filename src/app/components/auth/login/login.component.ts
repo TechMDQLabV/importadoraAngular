@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(user)
       .subscribe(response =>{
         if (localStorage.getItem('token')) {
-          let redirect = this.loginService.redirectUrl ? this.router.parseUrl(this.loginService.redirectUrl) : "/categorias"
+          let redirect = this.loginService.redirectUrl ? this.router.parseUrl(this.loginService.redirectUrl) : "/home"
         
         this.router.navigateByUrl(redirect);
         }

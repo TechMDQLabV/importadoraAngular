@@ -1,5 +1,5 @@
 <div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
-  <div class="container">
+  <div class="container mt-5">
       <div class="row mt-4 pt-4 pb-4 div_trans5 corner4">
         <div class="col-lg-12 col-md-6 col-sm-12 ml-auto mr-auto text-white">        
         <p>Nueva Categoria</p>
@@ -32,7 +32,7 @@
     </div>      
 
       <div class="row mt-4 pt-4 pb-4 div_trans5 corner4 justify-content-center">
-        <p class="text-white mb-4">Listado de Categorias</p>        
+        <h6 class="text-white mb-4">Listado de Categorias</h6>               
         <table class="table text-white m-2">
           <thead>
             <th>Id</th>
@@ -47,13 +47,11 @@
               <td>{{ category.id }}</td>
               <td>{{ category.name }}</td>
               <td class="text-center" *ngIf="category.isActive != 0; else desactivado">
-                <a (click)="onChangeStatus(category.id)"><i class="fa fa-eye"></i></a>
+                <a class="cursor-link" (click)="onChangeStatus(category.id)"><i class="fa fa-eye text-white"></i></a>
               </td>
               <ng-template #desactivado>
                 <td class="text-center">
-                  <a (click)="onChangeStatus(category.id)">
-                    <i class="fa fa-eye-slash"></i>
-                  </a>
+                  <a class="cursor-link" (click)="onChangeStatus(category.id)"><i class="fa fa-eye-slash text-white"></i></a>
                 </td>
               </ng-template>
               <td class="text-center"><button class="btn btn-danger mr-2"><i class="fa fa-trash-o"></i> Eliminar</button></td>

@@ -31,7 +31,7 @@ const routes: Routes =[
     { path: 'productos', component: ProductListComponent , canActivate: [AuthGuard] },
     { path: 'productos/agregar', component: ProductAddComponent , canActivate: [AuthGuard] },
     { path: 'categorias/:id/etiquetas/:name', component: TagComponent, canActivate: [AuthGuard] },
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }    
 ];
 

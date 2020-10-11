@@ -1,0 +1,58 @@
+.div_trans2 { background-color: rgba(0, 0, 0, 0.2); }
+.div_trans5 { background-color: rgba(0, 0, 0, 0.5); }
+.div_trans8 { background-color: rgba(0, 0, 0, 0.8); }
+.div_trans9 { background-color: rgba(0, 0, 0, 0.9); }
+.corner4 { border-radius: 15px; }
+.corner5 { border-radius: 20px; }
+.cursor-link { cursor:pointer; }
+#fondo {
+	background-image: url('assets/img/bg-logistics.jpg');
+	/*padding: 400px 100px;*/
+	text-align: center;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+#fondo:before {
+	content:'';
+    position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.card-product .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center;
+}
+.card-product .img-wrap img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+.card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+.card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.label-rating { margin-right:10px;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.card-product .price-old {
+    color: #999;
+    margin-left: 2%;
+}
