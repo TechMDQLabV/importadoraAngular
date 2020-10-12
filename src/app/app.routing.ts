@@ -20,11 +20,11 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 
 const routes: Routes =[
    // { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home',             component: ComponentsComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'signup',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent },
+    { path: 'home',                 component: ComponentsComponent },
+    { path: 'user-profile',         component: ProfileComponent },
+    { path: 'signup',               component: SignupComponent },
+    { path: 'landing',              component: LandingComponent },
+    { path: 'nucleoicons',          component: NucleoiconsComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'categorias', component: CategoryAppComponent, canActivate: [AuthGuard] },
@@ -41,7 +41,10 @@ const routes: Routes =[
     BrowserModule,
     RouterModule.forRoot(routes,{
       useHash: false,
-      enableTracing: false
+      enableTracing: false,
+      onSameUrlNavigation: "ignore",
+      anchorScrolling:'enabled',
+      scrollPositionRestoration: 'enabled'      
     })
   ],
   exports: [RouterModule],

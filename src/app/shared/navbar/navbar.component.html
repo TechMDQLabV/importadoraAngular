@@ -36,7 +36,7 @@
                 </li>                
 
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a (click)="logout()" class="nav-link cursor-link">Log Out</a>
+                    <a (click)="logout()" class="nav-link cursor-link"><i class="fa fa-sign-in" aria-hidden="true"></i>Log Out</a>
                 </li> 
 
                 <li class="nav-item" *ngIf="!isHome()">
@@ -46,12 +46,16 @@
             </ul>         
 
             <ng-template #notLogged>             
-            <ul class="navbar-nav ml-auto">               
+            <ul class="navbar-nav ml-auto">        
+
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']" [fragment]="'section-contact'"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a>
+                </li>                       
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a [routerLink]="['/register']" class="nav-link">Register</a>
+                    <a [routerLink]="['/register']" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i>Register</a>
                 </li>                
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a [routerLink]="['/login']" class="nav-link">Login</a>
+                    <a [routerLink]="['/login']" class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
                 </li>
             </ul>                    
             </ng-template>
