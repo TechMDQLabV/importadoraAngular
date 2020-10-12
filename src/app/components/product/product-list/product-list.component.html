@@ -1,1 +1,37 @@
-<p>product-list works!</p>
+<div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
+    <div class="container mt-5">
+              
+  
+        <div class="row mt-4 pt-4 pb-4 div_trans5 corner4 justify-content-center">
+          <h6 class="text-white mb-4">Mis Productos</h6>               
+          <table class="table text-white m-2">
+            <thead>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th class="text-center">Estado</th>
+              <th class="text-center">Eliminar</th>
+              <th class="text-center">Actualizar</th>
+              <th class="text-center">Fotos</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td>{{product.product.id}}</td>
+                <td>{{product.product.name}}</td>
+                <td class="text-center" *ngIf="product.product.isActive != 0; else desactivado">
+                  <a class="cursor-link" ><i class="fa fa-eye text-white"></i></a>
+                </td>
+                <ng-template #desactivado>
+                    <td class="text-center">
+                      <a class="cursor-link" ><i class="fas fa-eye-slash text-white"></i></a>
+                    </td>
+                </ng-template>
+                <td class="text-center"><button class="btn btn-danger mr-2"><i class="fa fa-trash-o"></i> Eliminar</button></td>
+                <td class="text-center"><button class="btn btn-success" ><i class="fa fa-pencil-square-o"></i> Actualizar</button></td>
+                <td class="text-center"><button class="btn btn-info" ><i class="fa fa-list"></i> Ver Fotos</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>          
+  
