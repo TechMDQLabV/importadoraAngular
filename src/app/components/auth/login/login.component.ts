@@ -51,6 +51,9 @@ export class LoginComponent implements OnInit {
         
         this.router.navigateByUrl(redirect);
         }
+      },error => {
+        console.error(error)
+        alert('Email o Password incorrect')
       });
   }
 
