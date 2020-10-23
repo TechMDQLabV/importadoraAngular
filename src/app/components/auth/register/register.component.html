@@ -1,49 +1,277 @@
-<div class="section section-image section-register" style="background-image: url('assets/img/login-image.jpg');">
+<div
+  class="section section-image section-register"
+  style="background-image: url('assets/img/login-image.jpg')"
+>
   <div class="container mt-5">
-      <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
-              <div class="card card-register bg-info">
-                  <h3 class="title">Register Form</h3>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+        <div class="card card-register bg-info">
+          <h3 class="title">Register Form</h3>
 
-                  <form [formGroup]="signupForm" class="register-form">               
-                      <label>Email</label>
-                      <div class="input-group form-group-no-border">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                              <i class="nc-icon nc-email-85"></i>
-                          </span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Email" formControlName="email">
-                        <div *ngIf="email.invalid && (email.dirty || email.touched)">
-                          <p *ngIf="email.errors.required" style="font-size: small; color: red">Required</p>
-                          <p *ngIf="email.errors.emailTaken" style="font-size: small; color: red">Already Taken</p>
-                        </div>                        
-                      </div>
-
-                      <label>Password</label>
-                      <div class="input-group form-group-no-border">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                              <i class="nc-icon nc-key-25"></i>
-                          </span>
-                        </div>
-                          <input type="password" class="form-control" placeholder="Password" formControlName="password">
-                      </div>
-
-                      <label>Confirm Password</label>
-                      <div class="input-group form-group-no-border mb-5">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                              <i class="nc-icon nc-key-25"></i>
-                          </span>
-                        </div>
-                          <input type="password" class="form-control" placeholder="Password" formControlName="confirmPassword">
-                      </div>                      
-
-                      <input type="submit" value="Sign Up" class="btn btn-neutral btn-block btn-round" (click)="signup()">
-                  </form>
+          <form [formGroup]="signupForm" class="register-form">
+            <label>Name</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
               </div>
-          </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Name"
+                formControlName="name"
+              />
+            </div>
+
+            <label>Last Name</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+                formControlName="lastName"
+              />
+            </div>
+
+            <label>Nationality</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Nationality"
+                formControlName="nationality"
+              />
+            </div>
+
+            <label>Country</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Country"
+                formControlName="country"
+              />
+            </div>
+
+            <label>City</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="City"
+                formControlName="city"
+              />
+            </div>
+
+            <label>Company Name</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Company Name"
+                formControlName="companyName"
+              />
+            </div>
+
+            <label>Company Phone</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Company Phone"
+                formControlName="phone"
+              />
+            </div>
+
+            <label>Company Cuit</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Company Cuit"
+                formControlName="cuitCompany"
+              />
+            </div>
+
+            <label>Adress</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Adress"
+                formControlName="adress"
+              />
+            </div>
+
+            <label>Activity Company</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Activity Company"
+                formControlName="activityCompany"
+              />
+            </div>
+
+            <label>¿EXPORTA/IMPORTA?</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="¿EXPORTA/IMPORTA?"
+                formControlName="actionJob"
+              />
+            </div>
+
+            <label>Estimated Price</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Estimated Price"
+                formControlName="estimatedPrice"
+              />
+            </div>
+
+            <label>Miniun Amount</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Miniun Amount"
+                formControlName="minAmount"
+              />
+            </div>
+
+            <label>Email</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                formControlName="email"
+              />
+              <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <p
+                  *ngIf="email.errors.required"
+                  style="font-size: small; color: red"
+                >
+                  Required
+                </p>
+                <p
+                  *ngIf="email.errors.emailTaken"
+                  style="font-size: small; color: red"
+                >
+                  Already Taken
+                </p>
+              </div>
+            </div>
+
+            <label>Password</label>
+            <div class="input-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-key-25"></i>
+                </span>
+              </div>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </div>
+
+            <label>Confirm Password</label>
+            <div class="input-group form-group-no-border mb-5">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-key-25"></i>
+                </span>
+              </div>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="confirmPassword"
+              />
+            </div>
+
+            <input
+              type="submit"
+              value="Sign Up"
+              class="btn btn-neutral btn-block btn-round"
+              (click)="signup()"
+            />
+          </form>
+        </div>
       </div>
+    </div>
   </div>
 </div>
