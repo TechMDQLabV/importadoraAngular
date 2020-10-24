@@ -1,13 +1,15 @@
 export class Product {
-    name:string;
-    description:string;
-    long_description:string;
-    price:number;
+        name: string
+        description: string
+        minAmount: number
+        productDenomination: string
+        packingDimensions: string
+        long_description: string
+        shippingWay: string
+        loadingPort: string
+        estimatedPrice: number
 
-    constructor(name:string, description:string, long_description:string, price:number){
-        this.name = name;
-        this.description = description;
-        this.long_description = long_description;
-        this.price = price;
+    constructor(){
+        
     }
 }
