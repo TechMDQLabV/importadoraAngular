@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Tag } from '../models/Tag';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagService {
 
-  url = "http://localhost:8000/api/admin/categorias/tags/"
+  url = environment.baseAdminUrl+"/categorias/tags/"
 
   constructor(private http: HttpClient) { }
 

@@ -4,6 +4,7 @@ import { UserLogin } from 'app/models/UserLogin';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { UserRegister } from 'app/models/UserRegister';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +56,7 @@ export class LoginService {
         'Accept' : 'application/json'
       })
     };
-    return this.http.post("http://localhost:8000/api/auth/signup", user, httpOptions)
+    return this.http.post(environment.baseUserUrl+"/auth/signup", user, httpOptions)
     .pipe(
       map(response => 
         console.log(response)        
