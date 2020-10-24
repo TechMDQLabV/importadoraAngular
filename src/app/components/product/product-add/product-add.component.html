@@ -5,18 +5,17 @@
   <div class="container mt-5">
     <div class="row mt-4 pt-4 pb-4 div_trans5 corner4">
       <div class="col-lg-12 col-md-6 col-sm-12 ml-auto mr-auto text-white">
-        
         <p>Nueva Producto</p>
-        <form>
+        <form [formGroup]="productAddForm">
           <div class="form-row">
             <div class="col">
               <label for="nameInput">Nombre</label>
               <input
                 type="text"
                 class="form-control"
-                id="nameInput"
-                name="nameInput"
-                [(ngModel)]="nameInput"
+                id="name"
+                name="name"
+                formControlName="name"
               />
             </div>
             <div class="col">
@@ -24,55 +23,109 @@
               <input
                 type="text"
                 class="form-control"
-                id="priceInput"
-                name="priceInput"
-                [(ngModel)]="priceInput"
+                id="estimatedPrice"
+                name="estimatedPrice"
+                formControlName="estimatedPrice"
               />
             </div>
           </div>
           <div class="form-row">
             <div class="col">
-              <label for="descriptionInput">Descripción Corta</label>
+              <label for="description">Descripción Corta</label>
               <input
                 type="text"
                 class="form-control"
-                id="descriptionInput"
-                name="descriptionInput"
-                [(ngModel)]="descriptionInput"
+                id="description"
+                name="description"
+                formControlName="description"
               />
-            </div> 
-            <div class="col ">
-              <label for="image" >Imágenes:</label>
-              <input class="form-control"
+            </div>
+            <div class="col">
+              <label for="productDenomination">Denominacion de producto</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productDenomination"
+                name="productDenomination"
+                formControlName="productDenomination"
+              />
+            </div>
+            <div class="col">
+              <label for="packingDimensions">Dimencion de paquete</label>
+              <input
+                type="text"
+                class="form-control"
+                id="packingDimensions"
+                name="packingDimensions"
+                formControlName="packingDimensions"
+              />
+            </div>
+            <div class="col">
+              <label for="shippingWay">shippingWay</label>
+              <input
+                type="text"
+                class="form-control"
+                id="shippingWay"
+                name="shippingWay"
+                formControlName="shippingWay"
+              />
+            </div>
+            <div class="col">
+              <label for="loadingPort">loadingPort</label>
+              <input
+                type="text"
+                class="form-control"
+                id="loadingPort"
+                name="loadingPort"
+                formControlName="loadingPort"
+              />
+            </div>
+            <div class="col">
+              <label for="minAmount">minAmount</label>
+              <input
+                type="text"
+                class="form-control"
+                id="minAmount"
+                name="minAmount"
+                formControlName="minAmount"
+              />
+            </div>
+            <div class="col">
+              <label for="image">Imágenes:</label>
+              <input
+                class="form-control"
                 placeholder="Imágenes"
                 type="file"
                 accept="image/*"
-                name="imageInput[]" 
+                name="imageInput[]"
                 id="imageInput"
-                [(ngModel)]="imageInput" 
+                formControlName="imageInput"
                 multiple
-              /> 
+              />
               <!-- <input type="file" accept="image/*" > -->
-            </div>         
+            </div>
           </div>
           <div class="form-row">
             <label for="validationTextarea">Textarea</label>
-            <textarea class="form-control"  
-            placeholder="Required example textarea"
-            id="descriptionLongInput"
-            name="descriptionLongInput"
-            [(ngModel)]="descriptionLongInput" ></textarea>
+            <textarea
+              class="form-control"
+              placeholder="Required example textarea"
+              id="long_description"
+              name="long_description"
+              formControlName="long_description"
+            ></textarea>
           </div>
-          <div >
-            <button type="submit" class="btn btn-primary mt-5" (click)="onAddProduct()">
+          <div>
+            <button
+              type="submit"
+              class="btn btn-primary mt-5"
+              (click)="onAddProduct()"
+            >
               Guardar
             </button>
-          </div> 
-          
+          </div>
         </form>
       </div>
     </div>
-
-    
   </div>
 </div>
