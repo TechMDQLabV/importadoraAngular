@@ -3,13 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from '../models/Category';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CaregoryServiceService {
 
-  url = "http://localhost:8000/api/admin/categorias";
+  url = environment.baseAdminUrl+"/categorias";
 
   constructor(private http: HttpClient) { }
 
